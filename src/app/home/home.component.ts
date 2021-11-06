@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
 import * as $ from 'jquery';
+import { analyzeAndValidateNgModules } from '@angular/compiler';
 
 @Component({
   selector: 'app-home',
@@ -16,6 +17,7 @@ export class HomeComponent implements OnInit {
 myarr:string[7];
   chosen = -1;
   currconvo = 0;
+  myval:any;
   isoverbool: boolean = false;
   conversation = ["You tap the idol to life", "smooth low bhum bam bam bam bam      bho    pop beep bam bam     pop beep bam bam     beep beep beep boo!", "*looks at you* Analyzing species. Human grade 21C.  fetching translation libraries. ",
     "Hi there", "You are in Mystery 4.0 which is currently the largest house of mystery here on earth!", "I'm VAJ the secondary gurdian of the place. I can talk and also interpret facial features and much more."]
@@ -26,6 +28,15 @@ myarr:string[7];
   tictactoe: boolean = false;
   user: any;
   ngOnInit(): void {
+    this.formanswer.valueChanges.subscribe((value)=>{
+      console.log(value);
+      window.localStorage.setItem("Value",JSON.stringify(value));
+    })
+
+    this.myval=JSON.parse(window.localStorage.getItem("Value"));
+    this.formanswer.patchValue(this.myval);
+    this.formanswer.updateValueAndValidity();
+
     // console.log($("#try").css("transform"));
     // let tr = $("#try").css("transform");
     // let values = tr.split('(')[1];
@@ -58,7 +69,7 @@ myarr:string[7];
   }
 
   formcont(name: string) { 
-    console.log(this.formanswer.get(name)!);
+   // console.log(this.formanswer.get(name)!);
     
     return this.formanswer.get(name)!;
     
