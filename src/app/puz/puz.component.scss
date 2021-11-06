@@ -1,0 +1,32 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 150px);
+    gap: 16px;
+
+    justify-content: center;
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: repeat(2, 150px);
+    }
+}
+// studied and understood here https://zoaibkhan.com/blog/how-to-create-a-card-memory-game-in-angular/
+.sus{
+    background-color: #abe9cd;
+    background-image: linear-gradient(315deg, #abe9cd 0%, #3eadcf 74%);
+    
+
+}
+.play{
+    margin-left: 50vw;
+    font-size: x-large;
+    color: white;
+    padding: 10vh 0vw 10vh 0vw;
+}
+.play1{
+
+    font-size: xx-large;
+    color: white;
+    padding: 10vh 0vw 10vh 0vw;
+}

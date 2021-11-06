@@ -1,0 +1,14 @@
+<div class="sus">
+<mat-toolbar color="primary" class="text-center play">
+    Let's Play
+  </mat-toolbar>
+  <div class="p-16">
+    <p class="text-center play1">A Memory Game!
+
+    </p>
+    <div class="grid p-16" style=" padding: 5vh 0vw 5vh 0vw;">
+      <app-game-card *ngFor="let c of cards; let idx=index" [data]="c" (cardClicked)="cardClicked(idx)">
+      </app-game-card>
+    </div>
+  </div>
+  </div>
