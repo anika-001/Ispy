@@ -98,7 +98,7 @@ const routes: Routes = [
     component:RestartDialogComponent
   }
   ,
-  { path: '', redirectTo: '/story', pathMatch: 'full' }
+  { path: '', redirectTo: '/mystory', pathMatch: 'full' }
 ];
 
 @NgModule({
